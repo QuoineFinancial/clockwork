@@ -50,7 +50,7 @@ module Clockwork
       private
       def are_different?(event, model)
         return true if event.nil?
-        event.name_or_frequency_has_changed?(model) || ats_have_changed?(model)
+        event.name_or_frequency_has_changed?(model) || ats_have_changed?(model) || event.other_attributes_have_changed?(model)
       end
 
       def ats_have_changed?(model)
